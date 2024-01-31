@@ -7,15 +7,17 @@
 </head>
 <body>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    <div id="app"></div>
+    <div id="app">
+    </div>
     <script>
         const vm = Vue.createApp({
             data() {
                 return {
-                    text: '<p>Hello world...</p>'
+                    attr: "src",
+                    img: "https://d8285fmxt3duy.cloudfront.net/public/articulos/img/java-script1.jpg"
                 };
             },
-            template: `<div v-html="text"></div>`
+            template: `<img v-bind:[attr]="img" v-bind:alt="img"/>`
         }).mount('#app');
 
         console.log(vm)
